@@ -12,6 +12,7 @@
       font-family: 'TimeFont';
       src: local('HONOR Sans Bold'),
         url('./fonts/HONORSans-Bold.woff2') format('woff2');
+      font-display: swap;
     }
 
     *,
@@ -81,13 +82,12 @@
     import { init as initIdle } from './js/idleDetection.js';
     import { init as initFullscreen } from './js/fullscreen.js';
 
+    const clockElement = document.querySelector('#clock');
+
     function updateClock() {
       const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      document.querySelector('#clock').textContent = `${hours}:${minutes}:${seconds}`;
-
+      const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+      clockElement.textContent = time;
       requestAnimationFrame(updateClock);
     }
 
