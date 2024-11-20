@@ -81,7 +81,7 @@ const toggleFullscreen = () => {
 
 // 事件处理函数
 const handleKeydown = (e) => {
-    if (e.code === 'Space' || e.code === 'Enter') {
+    if (e.code === 'Space') {
         e.preventDefault();
         toggleFullscreen();
     }
