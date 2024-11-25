@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'TimeFont';
+  src: local('HONOR Sans Bold'),
+    url('./fonts/HONORSans-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  color: oklch(1 0 0);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  user-select: none;
+}
+
+#clock {
+  text-align: center;
+  font-size: 15dvw;
+  font-family: 'TimeFont', sans-serif;
+}
+
+
+#notice {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: oklch(0 0 0 / 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+#notice.show {
+  opacity: 1;
+}
+
+.hide-cursor {
+  cursor: none;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: oklch(0.14 0 0);
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%,
+      oklch(0.6 0.12 282.85 / 0.3),
+      oklch(1 0 0 / 0));
+}
