@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'TimeFont';
   src: local('HONOR Sans Bold'),
-    url('./fonts/HONORSans-Bold.woff2') format('woff2');
+    url('../fonts/HONORSans-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
